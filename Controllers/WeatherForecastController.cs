@@ -7,11 +7,11 @@ namespace homework.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-       
+
 
         private readonly ILogger<WeatherForecastController> _logger;
         private readonly IWeatherService _weatherService;
-      public WeatherForecastController(ILogger<WeatherForecastController> logger, IWeatherService weatherService)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IWeatherService weatherService)
         {
             _logger = logger;
             _weatherService = weatherService;
@@ -22,7 +22,7 @@ namespace homework.Controllers
         {
             return _weatherService.Get(number);
         }
-     }
+    }
 
 
 }

@@ -1,4 +1,5 @@
 using homework;
+using BubbleTeaEF;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<IWeatherService, PaidWeatherService>();
+builder.Services.AddWeatherServices(builder.Configuration);
+builder.Services.AddBubbleTeaEF();
 
 var app = builder.Build();
 
